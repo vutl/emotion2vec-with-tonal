@@ -5,6 +5,7 @@ from typing import Optional
 from fairseq.models.wav2vec import ConvFeatureExtractionModel
 from fairseq.modules import TransposeLast, LayerNorm
 from .config_tonal import D2vPitchConfig # Use the new pitch config
+import torch.nn.functional as F
 
 class PitchEncoder(nn.Module):
     def __init__(self, cfg: D2vPitchConfig, output_dim: Optional[int] = None):
